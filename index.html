@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Video Flow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  font-family:sans-serif;
+}
+
+/* ONE VIDEO = ONE SCREEN */
+.video-box{
+  width:100%;
+  height:100vh;
+  max-width:420px;
+  margin:0 auto;
+  position:relative;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* VIDEO AUTO FIT ALL SIZES */
+video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#000;
+}
+
+/* PLAY BUTTON */
+.play-btn{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:70px;
+  color:white;
+  background:rgba(0,0,0,.35);
+  cursor:pointer;
+  z-index:2;
+}
+
+/* DOWNLOAD BUTTON */
+.download{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  width:80%;
+  max-width:280px;
+  text-align:center;
+  background:#e74c3c;
+  color:#fff;
+  padding:12px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  z-index:3;
+}
+</style>
+</head>
+
+<body>
+
+<!-- VIDEO 1 -->
+<div class="video-box">
+  <video id="v1" playsinline preload="none">
+    <source src="VIDEO_1.mp4">
+  </video>
+  <div class="play-btn" onclick="playAd('v1','AD_1',this)">▶</div>
+  <a class="download" href="AD_1" target="_blank">Download</a>
+</div>
+
+<!-- VIDEO 2 -->
+<div class="video-box">
+  <video id="v2" playsinline preload="none">
+    <source src="VIDEO_2.mp4">
+  </video>
+  <div class="play-btn" onclick="playAd('v2','AD_2',this)">▶</div>
+  <a class="download" href="AD_2" target="_blank">Download</a>
+</div>
+
+<!-- VIDEO 3 -->
+<div class="video-box">
+  <video id="v3" playsinline preload="none">
+    <source src="VIDEO_3.mp4">
+  </video>
+  <div class="play-btn" onclick="playAd('v3','AD_3',this)">▶</div>
+  <a class="download" href="AD_3" target="_blank">Download</a>
+</div>
+
+<!-- VIDEO 4 -->
+<div class="video-box">
+  <video id="v4" playsinline preload="none">
+    <source src="VIDEO_4.mp4">
+  </video>
+  <div class="play-btn" onclick="playAd('v4','AD_4',this)">▶</div>
+  <a class="download" href="AD_4" target="_blank">Download</a>
+</div>
+
+<!-- VIDEO 5 -->
+<div class="video-box">
+  <video id="v5" playsinline preload="none">
+    <source src="VIDEO_5.mp4">
+  </video>
+  <div class="play-btn" onclick="playAd('v5','AD_5',this)">▶</div>
+  <a class="download" href="AD_5" target="_blank">Download</a>
+</div>
+
+<!-- VIDEO 6 -->
+<div class="video-box">
+  <video id="v6" playsinline preload="none">
+    <source src="VIDEO_6.mp4">
+  </video>
+  <div class="play-btn" onclick="playAd('v6','AD_6',this)">▶</div>
+  <a class="download" href="AD_6" target="_blank">Download</a>
+</div>
+
+<!-- VIDEO 7 -->
+<div class="video-box">
+  <video id="v7" playsinline preload="none">
+    <source src="VIDEO_7.mp4">
+  </video>
+  <div class="play-btn" onclick="playAd('v7','AD_7',this)">▶</div>
+  <a class="download" href="AD_7" target="_blank">Download</a>
+</div>
+
+<!-- VIDEO 8 -->
+<div class="video-box">
+  <video id="v8" playsinline preload="none">
+    <source src="VIDEO_8.mp4">
+  </video>
+  <div class="play-btn" onclick="playAd('v8','AD_8',this)">▶</div>
+  <a class="download" href="AD_8" target="_blank">Download</a>
+</div>
+
+<!-- VIDEO 9 -->
+<div class="video-box">
+  <video id="v9" playsinline preload="none">
+    <source src="VIDEO_9.mp4">
+  </video>
+  <div class="play-btn" onclick="playAd('v9','AD_9',this)">▶</div>
+  <a class="download" href="AD_9" target="_blank">Download</a>
+</div>
+
+<!-- VIDEO 10 -->
+<div class="video-box">
+  <video id="v10" playsinline preload="none">
+    <source src="VIDEO_10.mp4">
+  </video>
+  <div class="play-btn" onclick="playAd('v10','AD_10',this)">▶</div>
+  <a class="download" href="AD_10" target="_blank">Download</a>
+</div>
+
+<script>
+function playAd(videoId, adLink, btn){
+  const v = document.getElementById(videoId);
+
+  btn.style.display = "none";
+  v.play();
+
+  // ad opens only on user click (mobile safe)
+  window.open(adLink, "_blank");
+}
+</script>
+
+</body>
+</html>
